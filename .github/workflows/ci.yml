@@ -25,8 +25,11 @@ jobs:
       - name: Validate package metadata
         run: node -e "const p=require('./package.json'); if(!p.name||!p.version||!p.bin) process.exit(1); console.log('package.json OK')"
 
-      - name: Validate MCP and Cursor metadata
+      - name: Validate JSON metadata
         run: node -e "for (const f of ['mcp.json','cursor-directory.json','.cursor-plugin/plugin.json']) { JSON.parse(require('fs').readFileSync(f,'utf8')); console.log(f+' OK') }"
+
+      - name: Validate skill frontmatter
+        run: node -e "const fs=require('fs'); const p='.cursor-plugin/skills/learnonetech-research/SKILL.md'; const s=fs.readFileSync(p,'utf8'); if(!s.startsWith('---\\n')||!s.includes('\\nname: learnonetech-research\\n')||!s.includes('\\ndescription:')) process.exit(1); if(!s.includes('\\n---\\n')) process.exit(1); console.log('SKILL.md frontmatter OK')"
 
       - name: Check server syntax
         run: node --check server.mjs
