@@ -1,0 +1,36 @@
+{
+  "name": "learnonetech",
+  "displayName": "Learn One Tech",
+  "version": "1.0.0",
+  "description": "Search and read Learn One Tech technology, Android, mobile and troubleshooting content directly from Cursor.",
+  "author": {
+    "name": "Arif Hossain"
+  },
+  "homepage": "https://learnonetech.com",
+  "repository": "https://github.com/arifaidev/learnonetech-mcp",
+  "license": "MIT",
+  "keywords": [
+    "learnonetech",
+    "android",
+    "mobile",
+    "technology",
+    "troubleshooting",
+    "frp",
+    "wordpress",
+    "mcp"
+  ],
+  "category": "education",
+  "tags": [
+    "android",
+    "mobile",
+    "technology",
+    "tutorials",
+    "mcp"
+  ],
+  "mcpServers": {
+    "learnonetech": {
+      "command": "npx",
+      "args": ["-y", "github:arifaidev/learnonetech-mcp"]
+    }
+  }
+}
