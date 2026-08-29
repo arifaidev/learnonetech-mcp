@@ -1,0 +1,14 @@
+{
+  "name": "learnonetech",
+  "displayName": "LearnOneTech MCP",
+  "description": "Search and read LearnOneTech.com technology, Android, mobile, FRP, apps, and troubleshooting guides directly from Cursor.",
+  "homepage": "https://learnonetech.com",
+  "repository": "https://github.com/arifaidev/learnonetech-mcp",
+  "category": "education",
+  "tags": ["technology", "android", "mobile", "troubleshooting", "guides", "mcp"],
+  "mcp": {
+    "transport": "stdio",
+    "command": "npx",
+    "args": ["-y", "github:arifaidev/learnonetech-mcp"]
+  }
+}
