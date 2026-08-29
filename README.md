@@ -1,6 +1,6 @@
 # LearnOneTech MCP
 
-An MCP server for [LearnOneTech](https://learnonetech.com) that lets Cursor and other MCP-compatible clients search and retrieve the site's public technology, Android, mobile, FRP, and troubleshooting content through the WordPress REST API.
+An MCP server and Cursor plugin for [LearnOneTech](https://learnonetech.com). It lets Cursor and other MCP-compatible clients search and retrieve the site's public technology, Android, mobile, FRP, apps, and troubleshooting content through the WordPress REST API.
 
 ## Features
 
@@ -10,7 +10,8 @@ An MCP server for [LearnOneTech](https://learnonetech.com) that lets Cursor and 
 - List article categories
 - Search public posts and pages
 - Return basic site information
-- No API key required
+- Includes a dedicated `learnonetech-research` Cursor skill
+- No API key required for public content
 - Uses MCP over stdio
 
 ## MCP tools
@@ -24,7 +25,15 @@ An MCP server for [LearnOneTech](https://learnonetech.com) that lets Cursor and 
 | `list_categories` | List public article categories |
 | `search_site` | Search public posts and pages |
 
-## Cursor
+## Cursor Skill
+
+The repository includes `learnonetech-research`, a Cursor skill that teaches the agent when and how to use the LearnOneTech MCP tools. It helps Cursor discover relevant articles, retrieve full content when necessary, preserve canonical source URLs, and distinguish retrieved LearnOneTech information from general knowledge.
+
+Skill location:
+
+`.cursor-plugin/skills/learnonetech-research/SKILL.md`
+
+## Cursor installation
 
 Install this repository as an MCP server in Cursor with:
 
@@ -56,7 +65,7 @@ The server reads publicly available content from:
 
 `https://learnonetech.com/wp-json/wp/v2`
 
-LearnOneTech publishes hands-on Android and FRP troubleshooting material and maintains editorial and responsible-use policies. The MCP is a retrieval layer; it does not authenticate users, unlock devices, or bypass security controls itself.
+The MCP is a retrieval layer. It does not authenticate users, unlock devices, or bypass security controls itself.
 
 ## Local development
 
@@ -67,13 +76,9 @@ npm install
 npm start
 ```
 
-## Testing
-
-The repository includes GitHub Actions CI that validates metadata, checks server syntax, verifies the public LearnOneTech API, and confirms that the MCP process starts.
-
 ## Responsible use
 
-Use device-recovery and FRP-related information only for devices you own or are authorized to service. Follow applicable laws and the site's responsible-use guidance.
+Use device-recovery and FRP-related information only for devices you own or are authorized to service. Follow applicable laws and LearnOneTech's responsible-use guidance.
 
 ## License
 
