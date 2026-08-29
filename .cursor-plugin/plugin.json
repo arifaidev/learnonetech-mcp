@@ -1,15 +1,15 @@
 {
   "name": "learnonetech",
-  "displayName": "LearnOneTech",
-  "version": "1.0.0",
-  "description": "Search and read LearnOneTech.com technology, Android, FRP, mobile, and troubleshooting guides directly from Cursor.",
+  "displayName": "LearnOneTech MCP",
+  "version": "1.0.1",
+  "description": "Search and read LearnOneTech.com technology, Android, mobile, FRP, apps, and troubleshooting guides directly from Cursor.",
   "author": { "name": "Arif Hossain" },
   "homepage": "https://learnonetech.com",
   "repository": "https://github.com/arifaidev/learnonetech-mcp",
   "license": "MIT",
-  "keywords": ["learnonetech", "android", "frp", "samsung", "xiaomi", "nokia", "mobile", "troubleshooting", "mcp"],
-  "category": "developer-tools",
-  "tags": ["technology", "android", "mobile", "guides", "mcp"],
+  "keywords": ["learnonetech", "technology", "android", "frp", "samsung", "xiaomi", "nokia", "mobile", "troubleshooting", "guides", "mcp"],
+  "category": "education",
+  "tags": ["technology", "android", "mobile", "troubleshooting", "guides", "mcp"],
   "mcpServers": {
     "learnonetech": {
       "command": "npx",
