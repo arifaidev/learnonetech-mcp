@@ -1,0 +1,22 @@
+{
+  "name": "learnonetech-mcp",
+  "version": "1.0.0",
+  "description": "MCP server that lets Cursor and other MCP clients search and read Learn One Tech content.",
+  "type": "module",
+  "main": "server.mjs",
+  "bin": {
+    "learnonetech-mcp": "server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "keywords": ["mcp", "cursor", "learnonetech", "android", "technology", "wordpress"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.5",
+    "zod": "^3.25.76"
+  }
+}
