@@ -4,7 +4,7 @@
     "learnonetech": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "github:arifaidev/learnonetech-mcp"]
+      "args": ["-y", "learnonetech-mcp@latest"]
     }
   }
 }
