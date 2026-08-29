@@ -6,7 +6,7 @@ import { z } from "zod";
 
 const SITE_URL = "https://learnonetech.com";
 const API_URL = `${SITE_URL}/wp-json/wp/v2`;
-const USER_AGENT = "learnonetech-mcp/1.0.0 (+https://learnonetech.com)";
+const USER_AGENT = "learnonetech-mcp/1.0.1 (+https://learnonetech.com)";
 
 async function wp(path, params = {}) {
   const url = new URL(`${API_URL}/${path.replace(/^\//, "")}`);
@@ -33,6 +33,12 @@ function stripHtml(html = "") {
     .replace(/&amp;/gi, "&")
     .replace(/&quot;/gi, '"')
     .replace(/&#039;/gi, "'")
+    .replace(/&#8217;/gi, "'")
+    .replace(/&#8216;/gi, "'")
+    .replace(/&#8220;/gi, '"')
+    .replace(/&#8221;/gi, '"')
+    .replace(/&#8211;/gi, "-")
+    .replace(/&#8212;/gi, "-")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -50,7 +56,7 @@ function summarizePost(post) {
   };
 }
 
-const server = new McpServer({ name: "learnonetech", version: "1.0.0" });
+const server = new McpServer({ name: "learnonetech", version: "1.0.1" });
 
 server.tool("site_info", "Get basic information about LearnOneTech and its public WordPress API.", {}, async () => ({
   content: [{ type: "text", text: JSON.stringify({
@@ -90,6 +96,7 @@ server.tool("get_article", "Retrieve a LearnOneTech article by numeric WordPress
   return { content: [{ type: "text", text: JSON.stringify({
     id: post.id,
     title: stripHtml(post.title?.rendered || ""),
+    slug: post.slug,
     url: post.link,
     date: post.date,
     modified: post.modified,
